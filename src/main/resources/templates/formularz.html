@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <title>NOWE LEPSZE SCRY.PL</title>
+</head>
+<body>
+
+<div cllass="container">
+<h1> wprowadzanie danych </h1>
+<form action="#" th:action="@{/view/greeting}" th:object="${greeting}"
+      method="post">
+    <p>First name : <input type="text" th:field="*{firstname}"/></p>
+    <p>Last name : <input type="text" th:field="*{lastname}"/></p>
+    <p> <input type="submit" value="Submit form"/> <input type="reset" value="Clear"/> </p>
+
+
+
+</form>
+</div>
+</body>
+</html>

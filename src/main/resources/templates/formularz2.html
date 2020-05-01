@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona odbierajaca dane z formularza</title>
+</head>
+<body>
+<h1>Result</h1>
+<p th:text=" 'firstname = ' + ${greeting.firstname}"/>
+<p th:text=" 'lastname = ' + ${greeting.lastname}"/>
+<a href="/view">Wroc do formularza</a>
+</body>
+</html>

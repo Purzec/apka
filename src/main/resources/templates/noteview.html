@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Notatnik</title>
+</head>
+<body>
+<div cllass="container">
+    <h1> Wprowadz notatke  </h1>
+    <form action="#" th:action="@{/note}" th:object="${notes}"  method="post">
+
+        <p> Importance <select name="Importance" th:field="*{importance}"  >
+                <option
+                        th:each="Importance : ${T(pl.patryk.apka.entity.Importance).values()}"
+                        th:value="${Importance}"
+                        th:text="${Importance}">
+                </option>
+            </select>
+        </p>
+        <p> Tresc notatki <input type="text" th:field="*{note}"/></p>
+        <p><input type="submit" value="ADD"  /></p>
+    </form>
+    <h1> ZAWARTOSC:  </h1>
+    <table>
+        <tr>
+            <th>IMPORTANCE</th>
+            <th>TIMESTAMP </th>
+            <th>NOTE </th>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>
