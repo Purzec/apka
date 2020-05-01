@@ -23,7 +23,7 @@ public class NoteRestController {
 
 
 
-    @PostMapping(value = "", consumes = "application/json",produces = "application/json")
+    @PostMapping(value = "/abc", consumes = "application/json",produces = "application/json")
     public NoteModel createdNote(@RequestBody NoteModel noteModel){
         System.out.println("program tworzy");
         logger.info("Creating note model");
