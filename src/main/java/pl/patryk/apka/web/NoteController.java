@@ -25,26 +25,23 @@ public class NoteController {
     @GetMapping()
     public  String getNoteView(Model model)
     {
-
-   model.addAttribute("notes",new NoteModel());
-
+        model.addAttribute("note",new NoteModel());
+        model.addAttribute("notes",noteEntityService.findAll());
         System.out.println("pierwsze wejscie");
 
         return  "noteview";
     }
 
-    @PostMapping(value = "notes")
-    public  String setNoteView(@ModelAttribute NoteModel noteModel)
+    @PostMapping()
+    public  String setNoteView(@ModelAttribute NoteModel noteModel,Model model)
     {
-        //model.addAttribute("obiekt", noteEntityService.toString());
+        noteEntityService.create(noteModel);
+        model.addAttribute("note", new NoteModel());
+        model.addAttribute("notes",noteEntityService.findAll());
         System.out.println("program wszedl tutaj");
 
-        return  "formularz";
+        return  "noteview";
     }
-
-
-
-
 
 
 }
