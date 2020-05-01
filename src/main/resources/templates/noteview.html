@@ -8,7 +8,7 @@
 <body>
 <div cllass="container">
     <h1> Wprowadz notatke  </h1>
-    <form action="#" th:action="@{/note}" th:object="${notes}"  method="post">
+    <form action="#" th:action="@{/note}" th:object="${note}"  method="post">
 
         <p> Importance <select name="Importance" th:field="*{importance}"  >
                 <option
@@ -22,11 +22,15 @@
         <p><input type="submit" value="ADD"  /></p>
     </form>
     <h1> ZAWARTOSC:  </h1>
+    <p th:text="${noteModel.toString()}"/>
     <table>
         <tr>
+
             <th>IMPORTANCE</th>
             <th>TIMESTAMP </th>
+
             <th>NOTE </th>
+
         </tr>
     </table>
 </div>
